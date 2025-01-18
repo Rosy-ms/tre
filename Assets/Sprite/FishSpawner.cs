@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FishSpawner : MonoBehaviour
+{
+    public GameObject fish;
+    public float spawnTime = 4;
+    public float timer  = 4;
+    // Start is called before the first frame update
+
+    // Update is called once per frame
+    void Update()
+    {
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+          {
+            Instantiate(fish, transform.position, transform.rotation);
+            timer = spawnTime;
+          }
+        }
+}
